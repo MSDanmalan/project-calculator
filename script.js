@@ -1,5 +1,5 @@
 const add = function(a, b) {
-    return a + b
+    return +a + +b
 };
 
 const subtract = function(a, b) {
@@ -32,13 +32,16 @@ function operate(operator, numA, numB) {
 };
 let value = ''
 const display = document.getElementById('display')
+display.textContent = ''
 const clear = document.getElementById('clear')
+clear.addEventListener('click', () => {
+    display.textContent = ''
+    value = ''})
 const plusMinus = document.getElementById('plus/minus')
 
 const point = document.getElementById('point')
 point.addEventListener('click', () => {
     display.textContent += '.'
-
 })
 
 const modButton = document.getElementById('modButton')
@@ -120,6 +123,16 @@ nine.addEventListener('click', () => {
 
 const equals = document.getElementById('equals')
 equals.addEventListener('click', () => {
-    display.textContent += '='
-    value.split(' ')
+    valueArray = value.split(' ')
+    x = operate(valueArray[1], valueArray[0], valueArray[2])
+    valueArray.splice(0, 3)
+    for (i = 0; i < valueArray.length; i++) {
+        let y, z
+        y = valueArray[0]
+        z = valueArray[1]
+        a = operate(y, x, z)
+        x = a
+        valueArray.splice(0, 2)
+    }
+    display.textContent = x
 })
