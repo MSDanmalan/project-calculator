@@ -297,6 +297,7 @@ function display(){
         upperDisplay.textContent = content2 + operandB
         content1 = upperDisplay.textContent
         displayOperatorOnce = true
+        operatorSwitch = false
     }
 }
 
