@@ -30,14 +30,28 @@ main
     grid-column-start: 1;
     grid-column-end: 5;
     color: white;
+    display: grid;
+    margin: 5px; 
+    border: 1px solid rgba(206, 199, 199, 0.479);
+    background-color: rgba(206, 199, 199, 0.479);
+    overflow: hidden;
+}
+
+#upperDisplay{
+    font-size: 2em;
+    font-weight: initial;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    font-size: 4.5em;
+    overflow: hidden;
+}
+
+#lowerDisplay{
+    font-size: 2em;
     font-weight: initial;
-    margin: 5px; 
-    border: 1px solid rgba(206, 199, 199, 0.479);
-    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
     overflow: hidden;
 }
 
